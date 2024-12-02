@@ -18,7 +18,7 @@ export const ACHIEVEMENTS = [
     year: "Sept 2024",
     title: "3rd Place",
     company: "Eduhacks 1.0",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
+    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases.`,
     technologies: ["React.js","Express", "MongoDB", "Framer Motion"],
   },
 ];
