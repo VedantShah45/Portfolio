@@ -20,7 +20,7 @@ export default function Contact() {
           className='text-center tracking-tighter'
         >
           <p className='my-4'>{CONTACT.phoneNo}</p>
-          <a href="#"className='border-b'>{CONTACT.email}</a>
+          <a href="mailto:vedantshah5445@gmail.com" className='border-b'>{CONTACT.email}</a>
         </motion.div>
     </div>
   )
