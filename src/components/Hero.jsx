@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HERO_CONTENT } from '../constants/index'
 import ProfilePic from '../assets/profile.jpg'
 import {motion} from 'framer-motion'
+import { PiReadCvLogoLight } from "react-icons/pi";
 
 const container=(delay)=>({
     hidden:{x:-100,opacity:0},
@@ -13,6 +14,7 @@ const container=(delay)=>({
 })
 
 export default function Hero() {
+    const [clicked, setClicked] = useState(false);
   return (
     <div className='border-b border-neutral-900 pb-4 lg:mb-35'>
         <div className='flex flex-wrap items-center justify-center lg:pl-10'>
@@ -34,11 +36,37 @@ export default function Hero() {
                     >
                         Full Stack Web and App Developer
                     </motion.span>
+                    <motion.a
+                        variants={container(0.5)}
+                        initial="hidden"
+                        animate="visible"
+                        href='https://drive.google.com/file/d/1QEXTPJ5CSPB3rfOIbriaie9e8qNJBJ8X/view?usp=sharing'
+                        onClick={() => setClicked(!clicked)}
+                        className="relative flex items-center justify-center mt-5 px-3 py-3 text-white w-20 h-8 border-2 border-white rounded-lg overflow-hidden"
+                    >
+                            <motion.span
+                                initial={{scaleX: 0 }}
+                                animate={{scaleX: clicked ? 1 : 0 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="absolute inset-0 origin-left bg-white"
+                            />
+                            <PiReadCvLogoLight className='z-10' size={18} color={clicked?'black':'white'} />
+                            <span
+                                className={`relative flex-row items-center justify-center pl-1 z-10 text-center ${
+                                clicked ? "text-black" : "text-white"
+                                } transition-colors duration-300`}
+                                style={{fontSize:18}}
+                            >
+                                CV
+                            </span>
+                    </motion.a>
                     <motion.p 
                     variants={container(1)}
                     initial="hidden"
                     animate="visible"
-                    className='my-2 max-w-xl font-light py-6 tracking-tighter'>{HERO_CONTENT}</motion.p>
+                    className='my-2 max-w-xl font-light py-6 tracking-tighter'>
+                        {HERO_CONTENT}
+                    </motion.p>
                 </div>
             </div>
             <div className='w-full lg:w-1/2 lg:p-8'>
