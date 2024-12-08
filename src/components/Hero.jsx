@@ -22,7 +22,7 @@ export default function Hero() {
     // Reset the clicked state after 400ms (matching the transition duration)
     setTimeout(() => {
       setClicked(false);
-    }, 5000);
+    }, 2500);
   };
 
   return (
